@@ -1,0 +1,17 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "Scripts for the everyone bucket list project",
+  "scripts": {
+    "add-coords": "node add-coords.mjs",
+    "add-embeddings": "node add-embeddings.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "mongodb": "^7.4.0",
+    "openai": "^4.52.0"
+  }
+}

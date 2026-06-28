@@ -1,0 +1,16 @@
+{
+  "name": "bucket-website",
+  "version": "1.0.0",
+  "description": "Simple bucket list website backed by MongoDB",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "dotenv": "^16.4.0",
+    "express": "^4.19.0",
+    "mongodb": "^7.4.0",
+    "openai": "^4.52.0"
+  }
+}

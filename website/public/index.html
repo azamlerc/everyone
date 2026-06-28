@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bucket List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+</head>
+<body>
+  <div id="app">
+    <div class="headlineWrap">
+      <h1 class="headline">🪣 Bucket List</h1>
+      <div class="headerActions">
+        <span class="pillToggle on" id="toggle-been">✅ Been</span>
+        <span class="pillToggle on" id="toggle-todo">🗺️ To do</span>
+        <span class="pillToggle" id="toggle-near">📍 Near me</span>
+        <!-- <a href="/chat.html" class="pillToggle">💬 Chat</a> -->
+      </div>
+    </div>
+    <div class="searchWrap">
+      <input id="search" class="searchBox" type="text" placeholder="Search using natural language" />
+    </div>
+    <div id="map"></div>
+    <div id="items" class="items large"></div>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="bucket.js"></script>
+</body>
+</html>
