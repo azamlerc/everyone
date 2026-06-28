@@ -2,13 +2,13 @@
 
 ## Chats
 
-1. [Creating a database](chats/database.md) — anyone can connect AI to a database. Follow this chat to learn how!
-2. [Enhancing the data](chats/enhance.md) — analyse the data, find more data, and add additional properties to existing data
+1. [Creating a database](chats/database.md) — learn what a database is and how to create your own
+2. [Enhancing the data](chats/enhance.md) — add more properties to the data, like country and location
 3. [Building a website](chats/website.md) — build a full stack website to display the data
-4. [Adding a map](chats/map.md) — show the places on a map, and sort them by distance from the current location
-5. [Natural language search](chats/search.md) — add natural language search using MongoDB Atlas Vector Search
-6. [Chat ](chats/chat.md) — build a chatbot that can answer questions about the data
-7. [Wrap-up](chats/wrapup.md) — reflect on the journey and where to go next
+4. [Adding a map](chats/map.md) — show the places on a map, and show nearby places
+5. [Natural language search](chats/search.md) — learn how to use MongoDB Atlas Vector Search
+6. [Chat interface](chats/chat.md) — build a chatbot that can answer questions about the data
+7. [Wrapup](chats/wrapup.md) — reflect on the journey and where to go next
 
 ## Context
 

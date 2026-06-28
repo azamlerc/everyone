@@ -1,5 +1,7 @@
 # AI ❤️ Databases, for everyone!
 
+## 6. Chat interface
+
 > We've built a website with a map, radius search, and natural language search. What else can we do?
 
 There's one more thing I've been saving. Everything we've built so far is about *finding* things — filtering, searching, locating. But what if someone visiting your bucket list could just... ask questions? In plain English, conversationally, the way you'd ask a well-travelled friend?
@@ -27,7 +29,7 @@ ANTHROPIC_API_KEY=sk-ant-...your key here...
 
 Then run `npm install` to pick up the new package and restart the server. You'll see a **💬 Chat** button has appeared in the header of the main page. Click it.
 
-![Chat](screenshots/chat.png) — the chat interface on the website
+![Chat](../screenshots/chat.png) — the chat interface on the website
 
 > Okay I'm on the chat page! What should I ask?
 

@@ -50,11 +50,11 @@ You should see `Running at http://localhost:3000`. Open that in your browser.
 
 Before you look at the website though — try opening `http://localhost:3000/api/bucket` first. That's the raw API endpoint. You'll see exactly what the server is sending to the browser: all 96 documents from your database as JSON, flags and coordinates and everything. That's the waiter bringing the food out of the kitchen.
 
-![API](screenshots/api.png) — the /bucket API JSON response
+![API](../screenshots/api.png) — the /bucket API JSON response
 
 > Oh wow, that's really cool! All my data right there in the browser. And the emoji look great in there. Okay now I'm going to the main page...
 
-![Website](screenshots/website.png) — the first version of the website with a list of places
+![Website](../screenshots/website.png) — the first version of the website with a list of places
 
 > Wow, amazing! I ran the server with node, went to that link in my browser, and there was my new website! I like how you added the toggle buttons and showed the challenges with stars.
 >

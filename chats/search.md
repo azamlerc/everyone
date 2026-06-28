@@ -64,7 +64,7 @@ The `numDimensions` must match what we generated. The `similarity` metric `cosin
 
 Now add your OpenAI key to the website's `.env` file as well, run `npm install` in the website folder to pick up the new package, and restart the server. You'll see a search box has appeared at the top of the page. Try typing something.
 
-![Search](screenshots/search.png) — natural language search interface
+![Search](../screenshots/search.png) — natural language search interface
 
 > Okay, I see the search field! I typed "statues" and it found The Motherland Calls, Worker and Kolkhoz Woman, and Woinic. Then I typed "transit" and it found ten metro, tram and train related things from around the world. This is so amazing! And run this by me again... all of this works because of 512 inscrutable numbers?!
 
