@@ -4,7 +4,7 @@ What if you could build a full-stack web application — with a cloud database, 
 
 A new protocol called MCP (Model Context Protocol) lets Claude connect directly to external tools and data sources. Paired with MongoDB, this unlocks capabilities that used to require a professional developer and makes them accessible to anyone willing to have a conversation. What follows is a series of chats that build, step by step, a real production-quality application using MongoDB Atlas, Atlas Vector Search, GeoJSON radius search, and Claude tool use — entirely through natural language.
 
-The data is a personal bucket list of 96 remarkable places: everything from the Great Pyramid to Null Island, from the Pyongyang Metro to a paper town in upstate New York. By the end, it's a live website with an interactive world map, radius search, semantic search that finds places by idea rather than keyword, and a chatbot you can have a real conversation with about the data. The human in the story never looks at the code.
+The data is a personal bucket list of 96 remarkable places: everything from the Great Pyramid to Null Island, from the Pyongyang Metro to a paper town in upstate New York. By the end, it's a live website with an interactive world map, radius search, semantic search, and a chatbot you can have a real conversation with about the data. The human in the story never looks at the code.
 
 ---
 
