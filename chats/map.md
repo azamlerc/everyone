@@ -20,7 +20,7 @@ Leaflet is a free, open-source JavaScript library for interactive maps. It handl
 
 I've updated the website with a map above the list. Restart the server and refresh the page — you should see the world map with all your pins on it.
 
-![Map](../screenshots/map.png) — the palces displayed with pins on a map
+![Map](../screenshots/map.png)
 
 > Oh WOW. There's my whole bucket list on a map! The green and red pins are perfect. I can see the cluster of European places I've done, and a big red cluster over Russia and Japan of things I still want to do. And the flag emojis in the pins are such a nice touch.
 >
@@ -44,7 +44,7 @@ This is idempotent — safe to run every time the server starts. If the index al
 
 Restart the server and try the button. The browser will ask for your location, and once you allow it the map will zoom to show everything on your list within 500km of where you are, with distances shown next to each entry.
 
-![Near Me](../screenshots/near-me.png) — places near the current location sorted by distance
+![Near Me](../screenshots/near-me.png)
 
 > Okay that works brilliantly! The map looks great, I love how it uses the green and red pins to show been and todo places, and the clustering is slick. The "near me" button also works great, it zooms smoothly to my current location and shows nearby places, listed by proximity. Toggling it off zooms back out to the world map. I still can't believe how easy this is.
 

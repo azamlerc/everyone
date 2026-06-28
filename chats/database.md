@@ -130,7 +130,7 @@ Right? Sometimes just organizing data is its own reward. Now save the spreadshee
 
 Then in Compass, click on your `bucket` collection in the left sidebar, and look for the **Import data** button. Select your CSV file. Compass will ask you to confirm the field types — `name` should be a String and `been` should be a Boolean, and it's usually smart enough to figure that out on its own. Accept the suggested formats and hit import.
 
-![Compass](../screenshots/compass.png) — the initial data import
+![Compass](../screenshots/compass.png)
 
 > It worked! I can see all my places in there. Each one has a `name`, a `been` value, and also something called `_id` that looks like a random jumble of characters.
 

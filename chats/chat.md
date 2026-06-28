@@ -29,7 +29,7 @@ ANTHROPIC_API_KEY=sk-ant-...your key here...
 
 Then run `npm install` to pick up the new package and restart the server. You'll see a **💬 Chat** button has appeared in the header of the main page. Click it.
 
-![Chat](../screenshots/chat.png) — the chat interface on the website
+![Chat](../screenshots/chat.png)
 
 > Okay I'm on the chat page! What should I ask?
 

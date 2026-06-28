@@ -6,7 +6,7 @@
 
 I do, but I'd love to hear you say it.
 
-![Compass Enhanced](../screenshots/compass-enhanced.png) — the database after enhancing the data
+![Compass Enhanced](../screenshots/compass-enhanced.png)
 
 > We started with a text file. Just a list of place names. And now I have a real database, a website, a map, a search engine that understands what I mean rather than just what I type, and a chatbot I can have a conversation with about my own data. And I genuinely did not write a single line of code. I didn't even really look at the code.
 
