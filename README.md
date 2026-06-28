@@ -6,8 +6,6 @@ A new protocol called MCP (Model Context Protocol) lets Claude connect directly 
 
 The data is a personal bucket list of 96 remarkable places: everything from the Great Pyramid to Null Island, from the Pyongyang Metro to a paper town in upstate New York. By the end, it's a live website with an interactive world map, radius search, semantic search, and a chatbot you can have a real conversation with about the data. The human in the story never looks at the code.
 
----
-
 ## Chats
 
 1. [Creating a database](chats/database.md) — learn what a database is and how to create your own
@@ -20,7 +18,7 @@ The data is a personal bucket list of 96 remarkable places: everything from the 
 
 ## Context
 
-1. [About Me](context/about-me.md) — some stuff about me
+1. [About Me](context/about-me.md) — context file about our fictional user
 2. [Database Project](context/database-project.md) — plan for building this stuff
 
 ## Data
