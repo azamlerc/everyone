@@ -1,5 +1,11 @@
 # AI ❤️ Databases, for everyone!
 
+What if you could build a full-stack web application backed by a sophisticated cloud database — with geospatial search, vector embeddings, and a conversational AI interface — without writing a single line of code or having any prior database experience? This project shows that you can.
+
+The thesis: connecting Claude to MongoDB via MCP unlocks capabilities that used to require a professional developer, and makes them accessible to anyone willing to have a conversation. What follows is a series of chats between a curious non-programmer and Claude that builds, step by step, a real production-quality application — using MongoDB Atlas, Atlas Vector Search, GeoJSON radius search, Claude tool use, and the Model Context Protocol — entirely through natural language.
+
+The data is a personal bucket list of 96 remarkable places: everything from the Great Pyramid to Null Island, from the Pyongyang Metro to a paper town in upstate New York. By the end, it's a live website with an interactive world map, a "near me" radius search, a semantic search box that finds places by vibe rather than keyword, and a chatbot you can have a real conversation with about the data. The human in the story never looks at the code. The code works anyway.
+
 ## Chats
 
 1. [Creating a database](chats/database.md) — learn what a database is and how to create your own
@@ -21,7 +27,7 @@
 
 ## Scripts
 
-1. [add-coords.mjs](scripts/add-coords.mjs) — fetches coordinates from Wikipedia for each bucket list entry and writes coords + GeoJSON location to the database
+1. [add-coords.mjs](scripts/add-coords.mjs) — fetches coordinates from Wikipedia for each bucket list entry and writes GeoJSON location to the database
 2. [add-embeddings.mjs](scripts/add-embeddings.mjs) — fetches Wikipedia summaries and generates OpenAI embeddings for semantic search
 
 ## Website
@@ -39,13 +45,8 @@
 - [Compass](screenshots/compass.png) — the initial data import
 - [API](screenshots/api.png) — the /bucket API JSON response
 - [Website](screenshots/website.png) — the first version of the website with a list of places
-- [Map](screenshots/map.png) — the palces displayed with pins on a map
+- [Map](screenshots/map.png) — the places displayed with pins on a map
 - [Near Me](screenshots/near-me.png) — places near the current location sorted by distance
 - [Search](screenshots/search.png) — natural language search interface
 - [Chat](screenshots/chat.png) — the chat interface on the website
 - [Compass Enhanced](screenshots/compass-enhanced.png) — the database after enhancing the data
-
-
-
-
-
