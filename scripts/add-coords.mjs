@@ -1,7 +1,6 @@
 // add-coords.mjs
 // Fetches coordinates for each entity in the bucket collection from its
-// Wikipedia link, then writes coords (human-readable string) and location
-// (GeoJSON Point) back to the database.
+// Wikipedia link, then writes a GeoJSON location Point back to the database.
 //
 // Setup:
 //   cd scripts
@@ -9,7 +8,7 @@
 //   cp .env.example .env   # then fill in your connection string
 //   node add-coords.mjs
 //
-// Skips entities that already have coords. Logs progress as it goes.
+// Skips entities that already have a location. Logs progress as it goes.
 
 import { MongoClient } from "mongodb";
 import { config } from "dotenv";
@@ -22,15 +21,8 @@ function toGeoJSON(lat, lon) {
   return { type: "Point", coordinates: [lon, lat] };
 }
 
-function formatDecimal(lat, lon) {
-  return `${lat.toFixed(8)}, ${lon.toFixed(8)}`;
-}
-
 function makeResult(lat, lon) {
-  return {
-    coords: formatDecimal(lat, lon),
-    location: toGeoJSON(lat, lon),
-  };
+  return { location: toGeoJSON(lat, lon) };
 }
 
 // ─── coordinate parsers ───────────────────────────────────────────────────────
@@ -219,24 +211,24 @@ async function main() {
   await client.connect();
   const col = client.db("everyone").collection("bucket");
 
-  const docs = await col.find({ link: { $exists: true }, coords: { $exists: false } }).toArray();
+  const docs = await col.find({ link: { $exists: true }, location: { $exists: false } }).toArray();
   console.log(`Found ${docs.length} documents to enrich.`);
 
-  let ok = 0, skipped = 0, failed = 0;
+  let ok = 0, failed = 0;
 
   for (const doc of docs) {
-    console.log(`\n[${ok + skipped + failed + 1}/${docs.length}] ${doc.name}`);
+    console.log(`\n[${ok + failed + 1}/${docs.length}] ${doc.name}`);
     console.log(`  ${doc.link}`);
 
     const result = await getCoordsFromUrl(doc.link);
     if (!result) { failed++; continue; }
 
-    await col.updateOne({ _id: doc._id }, { $set: { coords: result.coords, location: result.location } });
-    console.log(`  ✓ ${result.coords}`);
+    await col.updateOne({ _id: doc._id }, { $set: { location: result.location } });
+    console.log(`  ✓ [${result.location.coordinates}]`);
     ok++;
   }
 
-  console.log(`\nDone. ${ok} updated, ${failed} failed, ${skipped} skipped.`);
+  console.log(`\nDone. ${ok} updated, ${failed} failed.`);
   await client.close();
 }
 
