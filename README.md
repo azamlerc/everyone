@@ -1,6 +1,6 @@
 # AI ❤️ Databases, for everyone!
 
-What if you could build a full-stack web application — with a cloud database, geospatial search, vector embeddings, and a conversational AI interface — without writing a single line of code or having any prior database experience? This project shows that you can.
+What if you could build a full-stack web application — with a cloud database, geospatial search, natural language queries, and a conversational AI interface — without writing a single line of code or having any prior database experience? This project shows that you can.
 
 A new protocol called MCP (Model Context Protocol) lets Claude connect directly to external tools and data sources. Paired with MongoDB, this unlocks capabilities that used to require a professional developer and makes them accessible to anyone willing to have a conversation. What follows is a series of chats that build, step by step, a real production-quality application using MongoDB Atlas, Atlas Vector Search, GeoJSON radius search, and Claude tool use — entirely through natural language.
 
