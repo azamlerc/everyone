@@ -1,10 +1,12 @@
 # AI ❤️ Databases, for everyone!
 
-What if you could build a full-stack web application backed by a sophisticated cloud database — with geospatial search, vector embeddings, and a conversational AI interface — without writing a single line of code or having any prior database experience? This project shows that you can.
+What if you could build a full-stack web application — with a cloud database, geospatial search, vector embeddings, and a conversational AI interface — without writing a single line of code or having any prior database experience? This project shows that you can.
 
-The thesis: connecting Claude to MongoDB via MCP unlocks capabilities that used to require a professional developer, and makes them accessible to anyone willing to have a conversation. What follows is a series of chats between a curious non-programmer and Claude that builds, step by step, a real production-quality application — using MongoDB Atlas, Atlas Vector Search, GeoJSON radius search, Claude tool use, and the Model Context Protocol — entirely through natural language.
+A new protocol called MCP (Model Context Protocol) lets Claude connect directly to external tools and data sources. Paired with MongoDB, this unlocks capabilities that used to require a professional developer and makes them accessible to anyone willing to have a conversation. What follows is a series of chats that build, step by step, a real production-quality application using MongoDB Atlas, Atlas Vector Search, GeoJSON radius search, and Claude tool use — entirely through natural language.
 
-The data is a personal bucket list of 96 remarkable places: everything from the Great Pyramid to Null Island, from the Pyongyang Metro to a paper town in upstate New York. By the end, it's a live website with an interactive world map, a "near me" radius search, a semantic search box that finds places by vibe rather than keyword, and a chatbot you can have a real conversation with about the data. The human in the story never looks at the code. The code works anyway.
+The data is a personal bucket list of 96 remarkable places: everything from the Great Pyramid to Null Island, from the Pyongyang Metro to a paper town in upstate New York. By the end, it's a live website with an interactive world map, radius search, semantic search that finds places by idea rather than keyword, and a chatbot you can have a real conversation with about the data. The human in the story never looks at the code.
+
+---
 
 ## Chats
 

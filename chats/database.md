@@ -2,11 +2,6 @@
 
 ## 1. Creating a database
 
-*For a few years now, we've been using AI chatbots like ChatGPT to do all kinds of amazing things. However, we've been limited by the way that we exchange information with AI, such as copying and pasting content in and out of a chat window. Recently, a new protocol called MCP has made it possible to connect chatbots like Claude to other data sources, such as the file system on your computer or databases like MongoDB. This evolution is so game changing, the moment when you start talking with AI about your data feels as profound as using the internet for the first time.*
-
-*These techniques are quite new, and while many developers are learning to take advantage of them, it's not exactly obvious for people who aren't programmers or don't have database experience what kind of amazing things are possible. What follows is a chat between a curious computer user and Claude that shows how non-programmers can take full advantage of using natural language to chat about their data, and can even build websites that take advantage of some advanced database features without even looking at code. Follow along, and I hope you'll learn something new!*
-
-
 > Hello! I've been using ChatGPT for a few years now, and find it useful for a bunch of things. A friend of mine told me about Claude, so I thought I'd come say hi and see what's happening over here. My friend mentioned something about databases, but they were talking really fast and I didn't really follow what they were on about. I'm not a programmer and have never used a database, but I'm curious if there's some cool stuff we can do together.
 
 Hello! Great to meet you. Your friend is onto something — there really is some genuinely cool stuff we can do together, and you don't need to be a programmer for any of it. Let me explain a few basic concepts, we'll get a couple things set up, and then we can just... talk about your data. Things that actually matter to you. 
