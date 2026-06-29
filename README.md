@@ -20,6 +20,7 @@ The data is a personal bucket list of 96 remarkable places: everything from the 
 
 1. [About Me](context/about-me.md) — context file about our fictional user
 2. [Database Project](context/database-project.md) — plan for building this stuff
+2. [Claude](CLAUDE.md) — repo notes for Claude to resume context
 
 ## Data
 
