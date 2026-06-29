@@ -40,6 +40,11 @@ The data is a personal bucket list of 96 remarkable places: everything from the 
 - [public/bucket.js](website/public/bucket.js) — map, list, toggles, near me, search
 - [public/chat.js](website/public/chat.js) — chat UI
 
+## Try it!
+
+- [Bucket List](https://everyone-9huc.onrender.com)
+- [Chat](https://everyone-9huc.onrender.com/chat.html)
+
 ## Screenshots
 
 - [Compass](screenshots/compass.png) — the initial data import
