@@ -48,7 +48,9 @@ The data is a personal bucket list of 96 remarkable places: everything from the 
 
 ## Screenshots
 
-- [Compass](screenshots/compass.png) — the initial data import
+- [Connectors](screenshots/connectors.png) — adding the MongoDB Atlas connector in Claude's Settings
+- [Org Settings](screenshots/org-settings.png) — enabling AI client access in Atlas
+- [Compass](screenshots/compass.png) — browsing the data with a direct connection, once scripts need one
 - [API](screenshots/api.png) — the /bucket API JSON response
 - [Website](screenshots/website.png) — the first version of the website with a list of places
 - [Map](screenshots/map.png) — the places displayed with pins on a map

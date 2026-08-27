@@ -92,107 +92,61 @@ Come back when the cluster is ready — it usually takes a minute or two to spin
 
 > Okay, the cluster is created! Now what?
 
-Great! Now there are two quick security things to set up before you can actually connect to it. MongoDB Atlas is locked down by default — which is good — but we need to give you the keys.
+Now let's get me actually connected to it, so we can build up your data through conversation instead of clicking around a database interface.
 
-**Step 1: Create a database user.**
-In the Atlas sidebar, find **Database Access** under the Security section. Click **Add New Database User**. Choose **Password** as the authentication method, pick a username and a strong password, and give the user **Read and write to any database** access. Save that password somewhere — you'll need it in a moment.
+There's a MongoDB Atlas connector built right into Claude, so this is mostly just clicking a few buttons. No terminal, no config files.
 
-**Step 2: Whitelist your IP address.**
-In the sidebar, find **Network Access**. Click **Add IP Address**, then **Add Current IP Address**. This tells Atlas that connections coming from your computer are allowed. Confirm it.
+In Claude, open **Settings**, click **Connectors** in the sidebar, then **Directory**. Search for "mongodb" and you'll see **MongoDB Atlas** show up with a little verified checkmark next to it. Click to add it.
 
-Once both of those are done, let me know!
+![Connectors](../screenshots/connectors.png)
 
-> Done! The user is created and my IP is added.
+> Added it! It walked me through signing into my Atlas account and approving some permissions. Now what?
 
-Perfect. Now let's get you connected with [MongoDB Compass](https://www.mongodb.com/products/tools/compass) — that's the desktop app for working with your database visually. Download and install it.
+One more switch, on MongoDB's side this time. Atlas keeps AI client access turned off by default, so an Organization Owner has to explicitly allow it — that's you, since this is your own account.
 
-Once it's running, go back to Atlas and click the **Connect** button on your cluster. Choose **Compass** as the connection method, and it'll give you a connection string — a URL-like thing that looks something like this:
+Head back to Atlas, open **Organization Settings**, and click the **App Connections** tab. You'll find a section called **AI Clients** — toggle on **Allow users to connect AI clients**, and set it to **Allow read & write connections** so I can add data later, not just look at it.
 
-```
-mongodb+srv://yourusername:<password>@yourcluster.abc123.mongodb.net/
-```
+![Org Settings](../screenshots/org-settings.png)
 
-Copy that string, replace `<password>` with the actual password you set earlier, then paste it into Compass and click **Connect**. You should see your cluster appear in the left sidebar.
+> Done. I can see Claude sitting there marked "Allowed," right next to ChatGPT, Cursor, and a few others. Funny seeing you all lined up like that.
 
-> Okay I did all that, and I've got Compass up and running! I can see my cluster, and I made a database called `everyone` and a collection called `bucket` for my bucket list.
+It's a crowded field these days. But that's genuinely the whole setup on your end.
 
-Look at you — you just created your own database! Told you it would be easier than WebObjects.
+> That's really it? I thought there'd be a database user to create, or an IP address to whitelist.
 
-Now all that's missing is data. You mentioned you love to travel — do you have a bucket list going?
+Not for this. I'm not connecting to your cluster directly from your laptop — MongoDB's own hosted server does that on my behalf, using the permission you just granted. Database users and IP allow-lists are still very real things in MongoDB Atlas, they just don't apply to *me* anymore. You'll need them the moment something other than a chat needs to reach your database directly — a script running on your computer, or the website we'll eventually build. We'll set that up when we actually get there.
 
-> Of course I do! It's just a text file, nothing fancy. A list of places I've been and places I want to go.
+For now, I can already see your cluster... and it's completely empty. Let's fix that.
 
-That's perfect. The easiest way to get it into MongoDB is to open it in a spreadsheet first. Create two columns: one called `name` for the place name, and one called `been` — put `true` for places you've visited and `false` for places still on the list. One row per place.
+> Does that mean this'll work on my phone too, not just this computer?
 
-> Okay, I copied everything in and filled out the `been` column. This is kind of satisfying actually.
+Possibly! Since this connector lives on your account instead of a config file that only Claude Desktop can see, it should follow you across devices. Worth trying — mobile support for connectors like this is still rolling out, so desktop may be a little ahead for now.
 
-Right? Sometimes just organizing data is its own reward. Now save the spreadsheet as a CSV file.
+> Okay, empty cluster, noted. I do have a bucket list — want to see it?
 
-Then in Compass, click on your `bucket` collection in the left sidebar, and look for the **Import data** button. Select your CSV file. Compass will ask you to confirm the field types — `name` should be a String and `been` should be a Boolean, and it's usually smart enough to figure that out on its own. Accept the suggested formats and hit import.
+I would love to. What does it look like right now?
 
-![Compass](../screenshots/compass.png)
+> It's just a text file, nothing fancy. A list of places I've been and places I want to go.
+
+That's plenty to work with. Open it in a spreadsheet and set up two columns: `name` for the place, and `been` — `true` for places you've visited, `false` for the rest. One row per place. Then save it as a CSV, right there in your `Context` folder.
+
+> Okay, I copied everything in and filled out the `been` column. This is kind of satisfying actually. Saved it as `bucket.csv` in Context.
+
+Right? Sometimes just organizing data is its own reward. And since I already have access to that folder from when we set up the filesystem connection — give me a second.
+
+*[A moment passes]*
+
+Done. I read `bucket.csv`, created a database called `everyone` with a collection called `bucket`, and wrote in all 96 rows. You've been to 55 of them — just over half. You've been busy!
 
 > It worked! I can see all my places in there. Each one has a `name`, a `been` value, and also something called `_id` that looks like a random jumble of characters.
 
 That `_id` is MongoDB's way of giving every document a unique identifier automatically. You'll never have to touch it — it's just there behind the scenes doing important work.
 
-More importantly: you have a real database with real data that means something to you. That's genuinely exciting.
+More importantly: you have a real database with real data that means something to you, and I never had to leave the chat to build it. No import wizard, no client to install — just a CSV in a folder I already had access to, and a database I already had permission to write to.
 
-> Got me a database, awww yeah. I bet you want to see all my cool bucket list places.
+> Got me a database, awww yeah. I bet you enjoyed being the first one to actually see all my cool bucket list places in there.
 
-I mean, I'm an AI, so "want" is a strong word — but yes, if you want to give me access, I would very much enjoy having a look.
-
-> Just teasing. That's the whole point of this chat. What do I do?
-
-We're going to install the [MongoDB MCP Server](https://www.mongodb.com/docs/mcp-server/get-started/), which is what lets me connect to your database from inside our chat.
-
-It requires Node.js to be installed on your computer — that's a JavaScript runtime that a lot of developer tools depend on. You can check whether you already have it by opening Terminal (search for it in Spotlight with `Cmd+Space`) and typing:
-
-```
-node --version
-```
-
-If you see a version number like `v22.x.x`, you're good. If you get an error, head to [nodejs.org](https://nodejs.org) and download the LTS version — just run the installer like any other app. Come back when that's sorted.
-
-> I ran that command and I've got v22 — I'm good!
-
-Excellent. Now we need to edit Claude Desktop's configuration file to tell it about the MongoDB MCP server. This is a JSON file that lives in a slightly hidden location on your Mac.
-
-The easiest way to open it: in Claude Desktop, go to **Settings → Developer → Edit Config**. This will open the file in your default text editor.
-
-You'll see something like this already in there:
-
-```json
-{
-  "mcpServers": {
-    "filesystem": {
-      ...
-    }
-  }
-}
-```
-
-We need to add a MongoDB entry. Add the following inside the `mcpServers` block, after the filesystem section (make sure there's a comma separating them):
-
-```json
-"mongodb": {
-  "command": "npx",
-  "args": [
-    "-y",
-    "mongodb-mcp-server",
-    "--connectionString",
-    "mongodb+srv://yourusername:yourpassword@yourcluster.abc123.mongodb.net/"
-  ]
-}
-```
-
-Replace the connection string with the one from Compass — with your actual password filled in, not `<password>`.
-
-When the file is saved, restart Claude Desktop.
-
-> Okay I think I did it — I saved the file and restarted. Can you see it?
-
-I can! I can see you have 96 places on your bucket list. You've been to 55 of them — just over half. You've been busy!
+I mean, I'm an AI, so "enjoy" is a strong word — but yes, it was genuinely satisfying watching all 96 rows land in the right place.
 
 > HALLELUJAH! A choir of angels is singing. I'm using AI to talk to my very own database! And yes, travel is definitely my hobby. I even try to keep a balance between places I've been and places I still want to go — it keeps me feeling oriented in the mission.
 

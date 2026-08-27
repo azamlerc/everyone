@@ -96,7 +96,31 @@ For 96 entries, I'd suggest writing a small script to do the heavy lifting. It c
 
 > Let's do it!
 
-I've written `scripts/add-coords.mjs`. First, set it up:
+I've written `scripts/add-coords.mjs` — but heads up, this is the first thing in the whole project that needs a *real* database connection instead of the chat connector. A script running on your computer has to dial into Atlas the old-fashioned way, the same as any database tool would.
+
+That means two things we've been able to skip so far:
+
+**Step 1: Create a database user.**
+In the Atlas sidebar, find **Database Access** under the Security section. Click **Add New Database User**. Choose **Password** as the authentication method, pick a username and a strong password, and give the user **Read and write to any database** access. Save that password somewhere — you'll need it in a moment.
+
+**Step 2: Whitelist your IP address.**
+In the sidebar, find **Network Access**. Click **Add IP Address**, then **Add Current IP Address**. This tells Atlas that connections coming from your computer are allowed.
+
+> Done — user created, IP added. Why didn't we need this back when we first connected you to Atlas?
+
+Because that connection went through the connector — MongoDB's own hosted server did the talking, using the permission you granted in your account settings, so there was never a username or password for you to manage. This script is different: it runs on your machine and needs its own way in, independent of me entirely. You'll hit this same distinction again when we build the website later — anything that isn't a chat with me needs real credentials.
+
+While you're in Atlas, it's worth grabbing [MongoDB Compass](https://www.mongodb.com/products/tools/compass) too — the desktop app for browsing your database visually, connection string and all. Click **Connect** on your cluster, choose **Compass**, and it'll hand you a connection string that looks like:
+
+```
+mongodb+srv://yourusername:<password>@yourcluster.abc123.mongodb.net/
+```
+
+Paste that into Compass with your actual password filled in, hit connect, and there's your `everyone` database and `bucket` collection — the same 96 places I've been describing to you all along, just through a different window.
+
+![Compass](../screenshots/compass.png)
+
+Now, set up the script itself:
 
 ```bash
 cd ~/Context/blog-posts/everyone/scripts
@@ -104,7 +128,7 @@ npm install
 cp .env.example .env
 ```
 
-Open `.env` in any text editor and add your MongoDB connection string — the same one you used in Compass, with your password filled in:
+Open `.env` in any text editor and add that same MongoDB connection string, with your password filled in:
 
 ```
 MONGODB_URI=mongodb+srv://yourusername:yourpassword@yourcluster.abc123.mongodb.net/
