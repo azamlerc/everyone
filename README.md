@@ -58,3 +58,8 @@ The data is a personal bucket list of 96 remarkable places: everything from the 
 - [Search](screenshots/search.png) — natural language search interface
 - [Chat](screenshots/chat.png) — the chat interface on the website
 - [Compass Enhanced](screenshots/compass-enhanced.png) — the database after enhancing the data
+
+## Version History
+
+- **1.0** — Initial release. Claude connected to MongoDB via the local `mongodb-mcp-server`, installed with `npx` and wired up by hand-editing Claude Desktop's `claude_desktop_config.json` — which meant creating a database user and whitelisting your IP address in Atlas just so Claude could see your data. Broke when [this Claude Code bug](https://github.com/anthropics/claude-code/issues/86142) landed.
+- **2.0** — Switched to the hosted MongoDB Atlas connector, authenticated via OAuth. Setup is now a couple of clicks in Claude's Settings and one toggle in Atlas — no Node.js, no config file to edit, no connection string for Claude to ever see. Database users and IP allow-lists are still real, they're just deferred to the point scripts and the website actually need them.
